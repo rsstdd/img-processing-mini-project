@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Image Resizer</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+  </head>
+  <body>
+    <main class="">
+
+      <nav class="nav">
+        <span class="nav-logo"></span>
+      </nav>
+
+      <div class="container">
+        <h1 class="title">Enter a URL to an Image Resource</h1>
+        <form id="url-form" class="section form">
+          <label class="label" for"name">Image Url</label>
+          <div class="field">
+            <input
+              id="url"
+              class="input"
+              type="text"
+              name="url"
+              value=""
+              placeholder="Image Url"s
+              requireds
+            >
+            <div class="control">
+              <button id="submit-btn" class="button is-primary" type="submit">Submit</button>
+            </div>
+          </div>
+        </form>
+
+        <section class="copy-section section is-hidden" id="url-section">
+          <span id="this-id" class="">Click to Copy</span>
+        </section>
+      </div>
+    </main>
+    <script src="./js/xhr.js" type="text/javascript"></script>
+    <script src="./js/index.js" type="text/javascript"></script>
+  </body>
+</html>

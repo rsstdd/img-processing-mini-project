@@ -1,0 +1,82 @@
+/* Nav */
+.nav {
+  align-items: center;
+  background: linear-gradient(340deg,#91c84a 60%,#b6e785);
+  display: flex;
+  justify-content: flex-start;
+  min-height: 50px;
+  min-width: 100%;
+  padding: 25px;
+  position: relative;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.nav-text {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  position: absolute;
+  right: 25px;
+}
+
+.nav-text:hover {
+  color: #eb671a;
+  cursor: pointer;
+}
+
+.nav-logo {
+  align-self: flex-start;
+  width: 200px;
+  height: 50px;
+  background-image: url('../images/migo_logo_white.svg');
+  background-repeat: no-repeat;
+}
+
+/* Title */
+.title {
+  padding: 25px;
+}
+
+
+/* Form Styles */
+.form {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.file-cta {
+  background-color: #b6e785 !important;
+}
+
+.button {
+  background-color: #b6e785 !important;
+  margin: 15px auto;
+  text-align: center;
+}
+
+
+/* Copy Section */
+.copy-section {
+  background-color: #f8f8f8;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 5px 25px;
+  margin: 0 auto;
+  max-height: 500px;
+  max-width: 80%;
+  overflow-y: auto;
+  padding: 25px;
+}
+
+.copy-section > * {
+  line-height: 2;
+}
+
+.copy-section > *:not(span):hover {
+  cursor: pointer;
+}
+
+.is-copied {
+  color: #b2b2b2;
+}
