@@ -5,7 +5,7 @@
       event.preventDefault()
       document.getElementById('submit-btn').classList.add('is-loading')
 
-      const processEndpoint = `http://localhost:8080/api/get-text`
+      const processEndpoint = `https://image-text-parsing.herokuapp.com/api/get-text`
       const url = document.getElementById('url').value.trim()
 
       if (!url) {
