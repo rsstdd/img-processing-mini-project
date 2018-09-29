@@ -1,6 +1,6 @@
 (() => {
   document.addEventListener('DOMContentLoaded', e => {
-    console.log('loaded');
+
     document.getElementById('url-form').addEventListener('submit', event => {
       event.preventDefault()
       document.getElementById('submit-btn').classList.add('is-loading')
@@ -24,8 +24,8 @@
         })
         .catch(err => {
           document.getElementById('submit-btn').classList.remove('is-loading')
-          window.alert('There was an error')
-          // showAlert()
+          window.alert(err)
+          console.log(err);
         })
     })
   })
@@ -34,9 +34,15 @@
     const copySec = document.getElementById('copy-section')
     const ptag = document.createElement('p')
 
-    ptag.textContent = content
-    copySec.appendChild(ptag)
-    addCopyListeners(ptag)
+    try {
+      ptag.innerText = `${content} \n`
+      copySec.appendChild(ptag)
+      addCopyListeners(ptag)
+      copySec.classList.remove('is-hidden')
+      document.getElementById('submit-btn').classList.remove('is-loading')
+    } catch(e) {
+      window.alert(e)
+    }
   }
 
   function addCopyListeners(el) {

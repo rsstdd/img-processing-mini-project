@@ -14,22 +14,11 @@ router.post("/api/get-text", async (req, res, next) => {
 
   getImage(imgUrl)
     .then(data => getText(data))
-    .then(text => res.send(text))
+    .then(text => {
+      console.log(text);
+      res.send(JSON.stringify(text))
+    })
     .catch(err => next(err));
-
-  // getImage(imgUrl)
-  //   .then(data => {
-  //     console.log(data);
-  //     // tesseract(data, (err, text) => {
-  //     //   console.log(text);
-  //     //   res.send(data);
-  //     // });
-  //   })
-  //   // .then(data => res.send(data))
-  //   .catch(err => {
-  //     console.error(err);
-  //     next(err);
-  //   });
 });
 
 module.exports = router;

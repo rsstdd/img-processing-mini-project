@@ -1,18 +1,25 @@
-const tesseract = require("tesseractocr");
+const vision = require('@google-cloud/vision');
+const client = new vision.ImageAnnotatorClient();
+
 
 const getText = img => {
-  console.log(img);
   return new Promise((res, rej) => {
-    tesseract(Buffer.from(img), (err, text) => {
-      if (err) {
-        console.log(err);
-        rej(err);
-      }
+    client
+      .textDetection(img)
+      .then(results => {
+        if (results[0].error !== null && results[0].error.message) {
+          rej(results[0].error.message)
+        }
 
-      console.log(err, text);
-      res(text);
-    });
-  });
+        if (results[0].fullTextAnnotation){
+          res(results[0].fullTextAnnotation.text)
+        }
+
+      })
+      .catch(err => {
+        rej(err)
+      });
+  })
 };
 
 module.exports = getText;
